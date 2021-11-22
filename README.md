@@ -19,5 +19,6 @@ https://www.sie.tsukuba.ac.jp/visitor/student/thesis_after2020
 
 ## 🦕 使い方
 
-こちらのPDFを参照してください．
+使い方については、[こちらのPDF](https://github.com/tsukuba-mas/master_paper_template/releases)を参照してください．
 
+https://github.com/tsukuba-mas/master_paper_template/releases
