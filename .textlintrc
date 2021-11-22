@@ -1,0 +1,31 @@
+{
+    "plugins": [
+        "latex2e"
+    ],
+    "rules": {
+        "preset-ja-spacing": true,
+        "preset-ja-technical-writing": {
+            "ja-no-mixed-period": {
+                "periodMark": "．"
+            },
+            "max-kanji-continuous-len": false
+        },
+        "preset-ja-engineering-paper": true,
+        "preset-jtf-style": {
+            "1.2.1.句点(。)と読点(、)": false,
+            "1.2.2.ピリオド(.)とカンマ(,)": false,
+            "4.1.3.ピリオド(.)、カンマ(,)": false
+        },
+        "ja-unnatural-alphabet": true,
+        "ja-hiragana-keishikimeishi": true,
+        "ja-hiragana-fukushi": true,
+        "ja-hiragana-hojodoushi": true,
+        "no-mixed-zenkaku-and-hankaku-alphabet": true
+    },
+    "filters": {
+        "comments": {
+            "enablingComment": "textlint-enable",
+            "disablingComment": "textlint-disable"
+        }
+    }
+}

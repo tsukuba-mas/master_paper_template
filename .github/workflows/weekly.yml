@@ -1,0 +1,52 @@
+on:
+  schedule:
+    # Friday 10:30(JST)
+    - cron: "30 1 * * 5"
+
+jobs:
+  ComPile_PDF_With_Tags:
+    runs-on: ubuntu-latest
+    name: Compile PDF with Tags
+    steps:
+      - name: Get Current Time
+        uses: 1466587594/get-current-time@v2
+        id: current_time
+        with:
+          format: "YYYY/MM/DD"
+          utcOffset: "+09:00"
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile Tex File
+        id: compile_tex_file
+        uses: tsukuba-mas/platex-action@main
+        with:
+          LATEX_FILE_NAME: "main.tex"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          tag_name: ${{steps.current_time.outputs.formattedTime}}
+          release_name: Release ${{steps.current_time.outputs.formattedTime}}
+          body: |
+            Compiled PDF Weekly ${{steps.current_time.outputs.formattedTime}}
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./main.pdf
+          asset_name: main.pdf
+          asset_content_type: application/pdf
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: master-paper-report
+          SLACK_ICON_EMOJI: ":bell:"
+          SLACK_MESSAGE: "${{steps.upload_release_asset.outputs.browser_download_url}}"

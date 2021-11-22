@@ -1,0 +1,27 @@
+\section{表紙}
+
+表紙は，{\tt $\backslash$maketitle} によって作成するため，以下の項目に相
+当する文字列をそれぞれ記述する．
+
+% textlint-disable
+\begin{description} \parskip=1pt
+    \item{題目: }
+          題目は{\tt $\backslash$title} に記述する．行替えを行う場合は$\backslash$
+          $\backslash$ を入力する．ただし，題目の最後に$\backslash$
+          $\backslash$ を入力するとコンパイルが通らなくなるので注意する．
+          なお，4行以上の題目の場合，表紙ページがあふれるためスタイルファ
+          イル``sie-euc.sty''を変更する必要がある．
+    \item{著者名: }
+          著者名は{\tt $\backslash$author} に記述する．
+    \item{学位: }
+          学位名は{\tt $\backslash$degree} に記述する．
+    \item{指導教員名: }
+          指導教教員は{\tt $\backslash$advisor} に記述する．
+    \item{専攻名: }
+          専攻名は{\tt $\backslash$majorfield} に記述する．
+    \item{学位プログラム名: }
+          学位プログラム名は{\tt $\backslash$programfield} に記述する．
+    \item{年月: }
+          年月は{\tt $\backslash$yearandmonth} に記述する．
+\end{description}
+% textlint-enable

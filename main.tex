@@ -1,0 +1,83 @@
+\documentclass[a4paper,11pt]{jreport}
+
+% ------------------------------------------------------------
+% usepackage
+% ------------------------------------------------------------
+\usepackage{sie-jp}
+\usepackage{times}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{here}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,setpagesize=false,bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{paralist}
+\usepackage{multirow}
+\usepackage{todonotes}
+
+
+% ------------------------------------------------------------
+% set
+% ------------------------------------------------------------
+\setcounter{tocdepth}{3}
+\setcounter{page}{-1}
+\setlength{\oddsidemargin}{0.1in}
+\setlength{\evensidemargin}{0.1in}
+\setlength{\topmargin}{0in}
+\setlength{\textwidth}{6in}
+\setlength{\parskip}{0em}
+\setlength{\topsep}{0em}
+
+% ------------------------------------------------------------
+% macro
+% ------------------------------------------------------------
+\renewcommand{\bibname}{参考文献}
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem*{theorem*}{定理}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem*{definition*}{定義}
+\renewcommand\proofname{\bf 証明}
+
+% ------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------
+\lstset{
+      language=C,
+      basicstyle=\footnotesize,
+      commentstyle=\textit,
+      classoffset=1,
+      keywordstyle=\bfseries,
+      frame=tRBl,framesep=5pt,
+      showstringspaces=false,
+      numbers=left,stepnumber=1,numberstyle=\footnotesize
+}
+
+% ------------------------------------------------------------
+% document
+% ------------------------------------------------------------
+
+\begin{document}
+
+\input{components/setup/init.tex}
+\input{components/introduction/init.tex}
+\input{components/format/init.tex}
+\input{components/acknowledgement/init.tex}
+\input{components/bibliography/init.tex}
+
+\end{document}

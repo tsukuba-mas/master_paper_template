@@ -1,0 +1,167 @@
+{
+	"files.exclude": {
+		"**/*.aux": true,
+		"**/*.lof": true,
+		"**/*.log": true,
+		"**/*.lod": true,
+		"**/*.tdo": true,
+		"**/*.lot": true,
+		"**/*.fls": true,
+		"**/*.out": true,
+		"**/*.toc": true,
+		"**/*.fmt": true,
+		"**/*.fot": true,
+		"**/*.cb": true,
+		"**/*.cb2": true,
+		"**/.*.lb": true,
+		"**/*.dvi": true,
+		"**/*.xdv": true,
+		"**/*-converted-to.*": true,
+		"**/*.bbl": true,
+		"**/*.bcf": true,
+		"**/*.blg": true,
+		"**/*-blx.aux": true,
+		"**/*-blx.bib": true,
+		"**/*.run.xml": true,
+		"**/*.fdb_latexmk": true,
+		"**/*.synctex": true,
+		"**/*.synctex(busy)": true,
+		"**/*.synctex.gz": true,
+		"**/*.synctex.gz(busy)": true,
+		"**/*.pdfsync": true,
+		"**/*latex.out/": true,
+		"**/*.alg": true,
+		"**/*.loa": true,
+		"**/acs-*.bib": true,
+		"**/*.thm": true,
+		"**/*.nav": true,
+		"**/*.pre": true,
+		"**/*.snm": true,
+		"**/*.vrb": true
+	},
+	"textlint.configPath": ".textlintrc",
+	"latex-workshop.latex.recipe.default": "lastUsed",
+	"latex-workshop.latex.tools": [
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-pdf",
+				"%DOC%"
+			]
+		},
+		{
+			"name": "pdflatex",
+			"command": "pdflatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			]
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": [
+				"%DOCFILE%"
+			]
+		},
+		{
+			"name": "ptex2pdf",
+			"command": "ptex2pdf",
+			"args": [
+				"-l",
+				"-ot",
+				"-kanji=utf8 -synctex=1",
+				"%DOC%"
+			]
+		},
+		{
+			"name": "ptex2pdf (uplatex)",
+			"command": "ptex2pdf",
+			"args": [
+				"-l",
+				"-u",
+				"-ot",
+				"-kanji=utf8 -synctex=1",
+				"%DOC%"
+			]
+		},
+		{
+			"name": "pbibtex",
+			"command": "pbibtex",
+			"args": [
+				"-kanji=utf8",
+				"%DOCFILE%"
+			]
+		}
+	],
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk",
+			"tools": [
+				"latexmk"
+			]
+		},
+		{
+			"name": "pdflatex*2",
+			"tools": [
+				"pdflatex",
+				"pdflatex"
+			]
+		},
+		{
+			"name": "pdflatex -> bibtex -> pdflatex*2",
+			"tools": [
+				"pdflatex",
+				"bibtex",
+				"pdflatex",
+				"pdflatex",
+			]
+		},
+		{
+			"name": "ptex2pdf*2",
+			"tools": [
+				"ptex2pdf",
+				"ptex2pdf"
+			]
+		},
+		{
+			"name": "beamer",
+			"tools": [
+				"ptex2pdf",
+				"ptex2pdf",
+				"ptex2pdf",
+			]
+		},
+		{
+			"name": "ptex2pdf -> pbibtex -> ptex2pdf*2",
+			"tools": [
+				"ptex2pdf",
+				"pbibtex",
+				"ptex2pdf",
+				"ptex2pdf",
+			]
+		},
+		{
+			"name": "ptex2pdf (uplatex) *2",
+			"tools": [
+				"ptex2pdf (uplatex)",
+				"ptex2pdf (uplatex)"
+			]
+		},
+		{
+			"name": "ptex2pdf (uplatex) -> pbibtex -> ptex2pdf (uplatex) *2",
+			"tools": [
+				"ptex2pdf (uplatex)",
+				"pbibtex",
+				"ptex2pdf (uplatex)",
+				"ptex2pdf (uplatex)"
+			]
+		},
+	]
+}
