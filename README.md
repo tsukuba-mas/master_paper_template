@@ -13,6 +13,10 @@ https://www.sie.tsukuba.ac.jp/visitor/student/thesis_after2020
 - textlintによる自動校正
 - make
 
+<!-- textlint-disable -->
+🦕🦕 修正や新しい機能追加をお待ちしています！ 🦕🦕
+<!-- textlint-enable -->
+
 ## 🦕 使い方
 
 こちらのPDFを参照してください．
